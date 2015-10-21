@@ -1,0 +1,10 @@
+[package]
+name = "bcl-watch"
+version = "0.1.0"
+authors = ["Christian Perez-Llamas <chrispz@gmail.com>"]
+
+[dependencies]
+# inotify = "0.1.12"
+notify = "^2.3"
+protobuf = "1.0.4"
+kafka = "0.1.6"
