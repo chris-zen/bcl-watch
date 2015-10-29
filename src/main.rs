@@ -18,7 +18,16 @@ fn main() {
 
   loop {
     match rx.recv() {
-      _ => println!("Recv.")
+      Ok(event) => {
+        println!("Recv {:?}", event);
+        if let Some(path) = event.path {
+            if let Ok(op) = event.op {
+                println!("path: {:?}, op: {:?}", path, op);
+            }
+        }
+      },
+      Err(error) =>
+        println!("Error: {}", error)
     }
   }
 }
